@@ -7,14 +7,14 @@ on:
       - master
       
   schedule:
-  - cron: "*/15 * * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+  - cron: "*0 * * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 
 jobs:
   auto_commit:
     runs-on: ubuntu-latest
     steps:
-      - name: DEBUG 
-        run: echo "::debug::Ref = ${{github.ref}}"
+      - name: Dummy Step 
+        run: echo "Schedule trigger removed, this workflow won't run automatically."
       - uses: actions/checkout@v3      
         with:
          persist-credentials: false
